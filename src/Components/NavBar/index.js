@@ -5,10 +5,10 @@ export default function NavBar(props) {
   return (
     <nav className='navbar'>
       <ul >
-        {props?.navItem?.map((item) => {
+        {props?.navItem?.map((item,index) => {
           return (
-            <li>
-              <Link to={item.path}>{item.name}</Link>
+            <li key={index}>
+              <Link to={item.path} >{item.name}</Link>
             </li>
           );
         })}

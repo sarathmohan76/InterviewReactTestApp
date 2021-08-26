@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ROUTE_CONSTANTS } from "./constants";
 import NavBar from "../Components/NavBar";
 
@@ -10,8 +10,8 @@ export default function Routes() {
       <div>
         <NavBar navItem={ROUTE_CONSTANTS} />
         <Switch>
-          {ROUTE_CONSTANTS.map((item) => {
-            return <Route exact path={item.path} component={item.component} />;
+          {ROUTE_CONSTANTS.map((item,index) => {
+            return <Route exact path={item.path} key={index} component={item.component} />;
           })}
         </Switch>
       </div>
